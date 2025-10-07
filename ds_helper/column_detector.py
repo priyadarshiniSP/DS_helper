@@ -23,4 +23,4 @@ def detect_column_types(df: pd.DataFrame, threshold: int = 20) -> dict:
         else:
             column_types['text'].append(col)
 
-    return column_types
+    return column_types
