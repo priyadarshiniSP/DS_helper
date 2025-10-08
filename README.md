@@ -20,8 +20,8 @@ Or install from source:
 
 ```bash
 git clone https://github.com/priyadarshiniSP/DS_helper.git
-cd ds-helper
-pip install -e .
+cd ds_helper
+pip install .
 ```
 
 ## Usage
