@@ -6,6 +6,16 @@ from collections import Counter
 import re
 from ds_helper.column_detector import detect_column_types
 
+def visualizer(df):
+    column_types = detect_column_types(df)
+    if column_types.get('numerical'):
+        plot_numerical(df, column_types['numerical'])
+        plot_pairplot(df, column_types['numerical'])
+    if column_types.get('categorical'):
+        plot_categorical(df, column_types['categorical'])
+    if column_types.get('text'):
+        plot_text(df, column_types['text'])
+
 def plot_numerical(df, numerical_cols):
     for col in numerical_cols:
         sns.histplot(df[col], kde=True)
@@ -55,13 +65,3 @@ def plot_text(df, text_cols):
         plt.ylabel('Frequency')
         plt.xticks(rotation=45)
         plt.show()
-
-column_types = detect_column_types(df)
-
-if column_types['numerical']:
-    plot_numerical(df, column_types['numerical'])
-    plot_pairplot(df, column_types['numerical'])
-if column_types['categorical']:
-    plot_categorical(df, column_types['categorical'])
-if column_types['text']:
-    plot_text(df, column_types['text'])
