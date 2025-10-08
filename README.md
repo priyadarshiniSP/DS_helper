@@ -19,7 +19,7 @@ pip install ds-helper
 Or install from source:
 
 ```bash
-git clone https://github.com/priyadarshiniSP/ds_helper.git
+git clone https://github.com/priyadarshiniSP/DS_helper.git
 cd ds-helper
 pip install -e .
 ```
