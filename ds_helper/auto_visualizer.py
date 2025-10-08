@@ -6,21 +6,6 @@ from collections import Counter
 import re
 from ds_helper.column_detector import detect_column_types
 
-df = pd.DataFrame({
-    'age': [23, 45, 36, 27, 50, 29],
-    'salary': [50000, 80000, 60000, 52000, 90000, 58000],
-    'gender': ['Male', 'Female', 'Female', 'Male', 'Male', 'Female'],
-    'comments': [
-        'Great team and friendly environment',
-        'Need better communication from management',
-        'Loved the flexible hours',
-        'The workload is heavy',
-        'Supportive leadership',
-        'Better work-life balance needed'
-
-    ]
-})
-
 def plot_numerical(df, numerical_cols):
     for col in numerical_cols:
         sns.histplot(df[col], kde=True)
